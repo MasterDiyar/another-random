@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://c0lkkpdqfk4bi"]
+
+[node name="Weapon" type="Node2D" unique_id=1497744069]
+
+[node name="WP" type="Sprite2D" parent="." unique_id=2012685256]
