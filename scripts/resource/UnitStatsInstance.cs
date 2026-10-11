@@ -1,27 +1,40 @@
 ﻿using Godot;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace trash.scripts.resource;
 
 public partial class UnitStatsInstance : RefCounted
 {
     public UnitStats BaseStats { get; private set; }
-
+    public UnitStats[] AccesoryModifiers { get; set; }
+    public UnitStats[] AdditionalModifier { get; set; }
+    
     public float CurrentHp { get; set; }
     public float CurrentMp { get; set; }
     public float CurrentEnergy { get; set; }
     public float CurrentArmor { get; set; }
     public float CurrentShield { get; set; }
 
-    
-    public float Speed => BaseStats?.Speed ?? 0f;
-    public float MaxHp => BaseStats?.MaxHp ?? 0f;
-    public float MaxMp => BaseStats?.MaxMp ?? 0f;
-    public float MaxEnergy => BaseStats?.MaxEnergy ?? 0f;
-    public float MaxArmor => BaseStats?.MaxArmor ?? 0f;
-    public float MaxShield => BaseStats?.MaxShield ?? 0f;
-    public float Strength => BaseStats?.Strength ?? 0f;
-    public float Agility => BaseStats?.Agility ?? 0f;
-    public float Intelligence => BaseStats?.Intelligence ?? 0f;
+    private float GetTotalStat(Func<UnitStats, float> selector)
+    {
+        float baseVal = BaseStats != null ? selector(BaseStats) : 0f;
+        float accesorySum = AccesoryModifiers?.Where(m => m != null).Sum(selector) ?? 0f;
+        float additionalSum = AdditionalModifier?.Where(m => m != null).Sum(selector) ?? 0f;
+
+        return baseVal + accesorySum + additionalSum;
+    }
+
+    public float Speed => GetTotalStat(s => s.Speed);
+    public float MaxHp => GetTotalStat(s => s.MaxHp);
+    public float MaxMp => GetTotalStat(s => s.MaxMp);
+    public float MaxEnergy => GetTotalStat(s => s.MaxEnergy);
+    public float MaxArmor => GetTotalStat(s => s.MaxArmor);
+    public float MaxShield => GetTotalStat(s => s.MaxShield);
+    public float Strength => GetTotalStat(s => s.Strength);
+    public float Agility => GetTotalStat(s => s.Agility);
+    public float Intelligence => GetTotalStat(s => s.Intelligence);
 
     public UnitStatsInstance(UnitStats baseStats)
     {
@@ -31,20 +44,17 @@ public partial class UnitStatsInstance : RefCounted
     public UnitStatsInstance()
     {
     }
-
-    /// <summary>
-    /// Loads or resets current stats to match the given UnitStats resource base values.
-    /// </summary>
+    
     public void LoadStats(UnitStats baseStats)
     {
         BaseStats = baseStats;
 
         if (BaseStats == null) return;
 
-        CurrentHp = BaseStats.MaxHp;
-        CurrentMp = BaseStats.MaxMp;
-        CurrentEnergy = BaseStats.MaxEnergy;
-        CurrentArmor = BaseStats.MaxArmor;
-        CurrentShield = BaseStats.MaxShield;
+        CurrentHp = MaxHp;
+        CurrentMp = MaxMp;
+        CurrentEnergy = MaxEnergy;
+        CurrentArmor = MaxArmor;
+        CurrentShield = MaxShield;
     }
 }

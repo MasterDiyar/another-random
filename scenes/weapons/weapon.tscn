@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://c0lkkpdqfk4bi"]
 
+[ext_resource type="Script" uid="uid://bhdwhgcwxjudu" path="res://scripts/weapons/Weapon.cs" id="1_nqevj"]
+
 [node name="Weapon" type="Node2D" unique_id=1497744069]
+script = ExtResource("1_nqevj")
 
 [node name="WP" type="Sprite2D" parent="." unique_id=2012685256]
