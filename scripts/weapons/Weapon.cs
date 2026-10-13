@@ -6,17 +6,23 @@ public partial class Weapon : Node2D
 {
 	[Export] public WeaponResource Resource;
 	[Export] public Sprite2D Texture;
+
+	protected bool CanShoot = true;
+	private double between = 0;
 	
 	public override void _Ready()
 	{
-		
-
-		if (Resource != null)
-		{
+		if (Resource != null) {
 			SetWeapon(resource:Resource);
 		}
-		
-		
+	}
+
+	public override void _Process(double delta)
+	{
+		LookAt(GetGlobalMousePosition());
+		if (CanShoot) return;
+		between -= delta;
+		if (between <= 0) CanShoot = true;
 	}
 
 	public void SetWeapon(WeaponResource resource)
@@ -30,8 +36,11 @@ public partial class Weapon : Node2D
 			unit.OnShoot += OnShoot;
 	}
 
-	private void OnShoot(float angle, Vector2 position)
+	protected virtual void OnShoot(float angle, Vector2 position)
 	{
+		if (!CanShoot)  return;
+		CanShoot = false;
+		between = Resource.AttackSpeed;
 		Resource.SpawnBullet(GetTree().Root.GetChild(0), position, angle);
 	}
 }

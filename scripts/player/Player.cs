@@ -6,19 +6,6 @@ namespace trash.scripts.units;
 
 public partial class Player : Unit
 {
-    [Export] public UnitStats BaseStats { get; set; }
-
-    public UnitStatsInstance Stats { get; private set; }
-
-    public override void _Ready()
-    {
-        base._Ready();
-
-        if (BaseStats != null)
-        {
-            Stats = new UnitStatsInstance(BaseStats);
-        }
-    }
 
     public override void _PhysicsProcess(double delta)
     {

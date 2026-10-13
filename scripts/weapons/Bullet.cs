@@ -30,7 +30,8 @@ public partial class Bullet : Area2D
         float dt =  (float)delta;
         Position += Speed * dt * Vector2.FromAngle(Rotation);
         LifeTime -= dt;
-        Resource.PerFlight(LifeTime);
+        var bullet = this;
+        Resource.PerFlight(LifeTime, ref bullet);
         if (LifeTime <= 0)
             QueueFree();
     }
