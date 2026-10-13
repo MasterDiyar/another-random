@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bhdwhgcwxjudu" path="res://scripts/weapons/Weapon.cs" id="1_nqevj"]
 
-[node name="Weapon" type="Node2D" unique_id=1497744069]
+[node name="Weapon" type="Node2D" unique_id=1497744069 node_paths=PackedStringArray("Texture")]
 script = ExtResource("1_nqevj")
+Texture = NodePath("WP")
 
 [node name="WP" type="Sprite2D" parent="." unique_id=2012685256]

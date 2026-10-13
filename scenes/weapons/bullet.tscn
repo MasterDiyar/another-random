@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://lsh8cumvtfdk"]
+
+[ext_resource type="Script" uid="uid://dyqu5ckne3q6k" path="res://scripts/weapons/Bullet.cs" id="1_mx1hr"]
+
+[node name="Bullet" type="Area2D" unique_id=1829791974 node_paths=PackedStringArray("CollisionShape", "Sprite")]
+script = ExtResource("1_mx1hr")
+CollisionShape = NodePath("CollisionShape2D")
+Sprite = NodePath("Sprite2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1264076602]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1801333016]

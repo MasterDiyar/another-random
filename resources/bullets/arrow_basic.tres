@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="BulletResource" format=3 uid="uid://dr3ycr5w4np7k"]
+
+[ext_resource type="PackedScene" uid="uid://lsh8cumvtfdk" path="res://scenes/weapons/bullet.tscn" id="1_44dpr"]
+[ext_resource type="Script" uid="uid://btr4vo6ig0ya5" path="res://scripts/resource/BulletResource.cs" id="1_jpotq"]
+[ext_resource type="Texture2D" uid="uid://f84nqvxf6wsy" path="res://assets/sprites/bolt.png" id="2_nx5fv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jpotq"]
+
+[resource]
+script = ExtResource("1_jpotq")
+BulletScene = ExtResource("1_44dpr")
+Texture = ExtResource("2_nx5fv")
+Shape = SubResource("CircleShape2D_jpotq")
+Speed = 90.0
+LifeTime = 0.5
+metadata/_custom_type_script = "uid://btr4vo6ig0ya5"

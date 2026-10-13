@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="WeaponResource" format=3 uid="uid://1hkvgp8b1ma1"]
+
+[ext_resource type="Texture2D" uid="uid://b5bevyemtgsyo" path="res://assets/sprites/bow.png" id="1_76h7c"]
+[ext_resource type="Resource" uid="uid://dr3ycr5w4np7k" path="res://resources/bullets/arrow_basic.tres" id="1_52753"]
+[ext_resource type="Script" uid="uid://cki6336tefaid" path="res://scripts/resource/WeaponResource.cs" id="1_cyaeo"]
+
+[resource]
+script = ExtResource("1_cyaeo")
+Resource = ExtResource("1_52753")
+WeaponTexture = ExtResource("1_76h7c")
+Damage = 15.0
+AttackSpeed = 1.0
+metadata/_custom_type_script = "uid://cki6336tefaid"

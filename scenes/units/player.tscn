@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://d028si8uh1e0b" path="res://scripts/player/Player.cs" id="1_esfxm"]
 [ext_resource type="Texture2D" uid="uid://dxhkx4uct6ao2" path="res://assets/sprites/playerHRIP.png" id="1_pkbir"]
 [ext_resource type="Script" uid="uid://jaf1bf5g0o0w" path="res://scripts/resource/UnitStats.cs" id="2_15tbu"]
+[ext_resource type="PackedScene" uid="uid://c0lkkpdqfk4bi" path="res://scenes/weapons/weapon.tscn" id="4_55td2"]
+[ext_resource type="Resource" uid="uid://1hkvgp8b1ma1" path="res://resources/weapons/bow_basic.tres" id="5_rwmet"]
 
 [sub_resource type="Resource" id="Resource_esfxm"]
 script = ExtResource("2_15tbu")
@@ -34,3 +36,6 @@ texture = ExtResource("1_pkbir")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1809311048]
 zoom = Vector2(2, 2)
+
+[node name="Weapon" parent="." unique_id=1497744069 instance=ExtResource("4_55td2")]
+Resource = ExtResource("5_rwmet")

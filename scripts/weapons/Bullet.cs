@@ -6,11 +6,15 @@ namespace trash.scripts.weapons;
 public partial class Bullet : Area2D
 {
     [Export] public BulletResource Resource;
+    [Export] public CollisionShape2D CollisionShape;
+    [Export] public Sprite2D Sprite;
     private float Damage, Speed, LifeTime = 1;
     
     public void SetResource(BulletResource resource, float damage)
     {
         Resource = resource;
+        CollisionShape.Shape = Resource.Shape;
+        Sprite.Texture = Resource.Texture;
 
         Speed += Resource.Speed;
         Resource.OnSpawn();

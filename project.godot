@@ -30,6 +30,7 @@ project/assembly_name="trash"
 
 folder_colors={
 "res://assets/": "red",
+"res://resources/": "teal",
 "res://scripts/": "blue"
 }
 

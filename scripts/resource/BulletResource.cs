@@ -4,6 +4,8 @@
 public partial class BulletResource : Resource
 {
     [Export] public PackedScene BulletScene;
+    [Export] public Texture2D Texture;
+    [Export] public Shape2D Shape;
     [Export] public float Speed;
     [Export] public float LifeTime;
     [Export] public float Pierce;
