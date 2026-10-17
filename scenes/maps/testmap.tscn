@@ -1,14 +1,13 @@
 [gd_scene format=3 uid="uid://c45wtd85hlrvm"]
 
-[ext_resource type="Texture2D" uid="uid://dniytbuqytyx1" path="res://assets/sprites/botleg.png" id="1_j8icx"]
 [ext_resource type="PackedScene" uid="uid://b1cjxlpj6tleh" path="res://scenes/units/player.tscn" id="2_fcinl"]
+[ext_resource type="PackedScene" uid="uid://dqf3r31ii88vk" path="res://scenes/units/botiha.tscn" id="2_mgnd1"]
 
 [node name="testmap" type="Node2D" unique_id=1327744512]
 texture_filter = 3
 
-[node name="Botleg" type="Sprite2D" parent="." unique_id=427207168]
-position = Vector2(547, 207)
-texture = ExtResource("1_j8icx")
-
 [node name="player" parent="." unique_id=406608555 instance=ExtResource("2_fcinl")]
 position = Vector2(832, 101)
+
+[node name="botiha" parent="." unique_id=516068922 instance=ExtResource("2_mgnd1")]
+position = Vector2(1008.4864, 187.08136)

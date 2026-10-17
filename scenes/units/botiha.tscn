@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dqf3r31ii88vk"]
+
+[ext_resource type="Texture2D" uid="uid://dniytbuqytyx1" path="res://assets/sprites/botleg.png" id="1_8nm67"]
+[ext_resource type="Script" uid="uid://16xvsgurqafp" path="res://scripts/units/Unit.cs" id="1_hwb3j"]
+[ext_resource type="Script" uid="uid://jaf1bf5g0o0w" path="res://scripts/resource/UnitStats.cs" id="2_rgxn6"]
+
+[sub_resource type="Resource" id="Resource_sdmle"]
+script = ExtResource("2_rgxn6")
+MaxHp = 9000.0
+metadata/_custom_type_script = "uid://jaf1bf5g0o0w"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sdmle"]
+radius = 25.019993
+
+[node name="botiha" type="CharacterBody2D" unique_id=516068922]
+script = ExtResource("1_hwb3j")
+BaseStats = SubResource("Resource_sdmle")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=239760868]
+shape = SubResource("CircleShape2D_sdmle")
+
+[node name="Botleg" type="Sprite2D" parent="." unique_id=1395923325]
+position = Vector2(0, -2)
+texture = ExtResource("1_8nm67")

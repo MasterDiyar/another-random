@@ -1,5 +1,6 @@
 using Godot;
 using trash.scripts.resource;
+using trash.scripts.units;
 
 [GlobalClass]
 public partial class BurstWeaponResource : WeaponResource
@@ -9,13 +10,13 @@ public partial class BurstWeaponResource : WeaponResource
     [Export] public float BurstSpread = 0f;
     [Export] public float BetweenAngle = 0f;
 
-    public override async void SpawnBullet(Node spawnNode, Vector2 spawnPosition, float rotation)
+    public override async void SpawnBullet(Node spawnNode, Vector2 spawnPosition, float rotation, Unit Parent)
     {
         float delayBetweenShots = BurstDuration / (BurstCount - 1);
 
         for (int i = 0; i < BurstCount; i++) {
             if (!IsInstanceValid(spawnNode)) break;
-            base.SpawnBullet(spawnNode, spawnPosition, rotation + i * BetweenAngle + GD.Randf() * BurstSpread);
+            base.SpawnBullet(spawnNode, Parent.GlobalPosition, rotation + i * BetweenAngle + GD.Randf() * BurstSpread, Parent);
 
             if (i < BurstCount - 1)
                 await spawnNode.GetTree().ToSignal(spawnNode.GetTree().CreateTimer(delayBetweenShots), SceneTreeTimer.SignalName.Timeout);

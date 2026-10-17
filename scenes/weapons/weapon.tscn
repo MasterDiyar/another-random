@@ -7,3 +7,4 @@ script = ExtResource("1_nqevj")
 Texture = NodePath("WP")
 
 [node name="WP" type="Sprite2D" parent="." unique_id=2012685256]
+position = Vector2(10, 0)

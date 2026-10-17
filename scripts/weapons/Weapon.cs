@@ -28,19 +28,20 @@ public partial class Weapon : Node2D
 	public void SetWeapon(WeaponResource resource)
 	{
 		Resource = resource;
-		
 		Texture.Texture = Resource.WeaponTexture;
 
 		if (GetParent() is not Unit unit) return;
-		if (!IsConnected(Unit.SignalName.OnShoot, new Callable(this, MethodName.OnShoot)))
+		var shootCallable = new Callable(this, MethodName.OnShoot);
+		if (!unit.IsConnected(Unit.SignalName.OnShoot, shootCallable))
 			unit.OnShoot += OnShoot;
+		
 	}
 
-	protected virtual void OnShoot(float angle, Vector2 position)
+	protected virtual void OnShoot(float angle, Vector2 position, Unit shooter)
 	{
 		if (!CanShoot)  return;
 		CanShoot = false;
 		between = Resource.AttackSpeed;
-		Resource.SpawnBullet(GetTree().Root.GetChild(0), position, angle);
+		Resource.SpawnBullet(GetTree().Root.GetChild(0), position, angle, shooter);
 	}
 }

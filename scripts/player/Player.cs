@@ -20,7 +20,7 @@ public partial class Player : Unit
 
         if (Input.IsActionPressed("lm")) {
             var angle = (-GetGlobalPosition() + GetGlobalMousePosition()).Angle();
-            EmitSignalOnShoot(angle, GetGlobalPosition());
+            EmitSignalOnShoot(angle, GetGlobalPosition(), this);
         }
 
         MoveAndSlide();
