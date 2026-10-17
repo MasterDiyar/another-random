@@ -2,22 +2,8 @@
 
 [ext_resource type="Script" uid="uid://d028si8uh1e0b" path="res://scripts/player/Player.cs" id="1_esfxm"]
 [ext_resource type="Texture2D" uid="uid://dxhkx4uct6ao2" path="res://assets/sprites/playerHRIP.png" id="1_pkbir"]
-[ext_resource type="Script" uid="uid://jaf1bf5g0o0w" path="res://scripts/resource/UnitStats.cs" id="2_15tbu"]
 [ext_resource type="PackedScene" uid="uid://c0lkkpdqfk4bi" path="res://scenes/weapons/weapon.tscn" id="4_55td2"]
-[ext_resource type="Resource" uid="uid://1hkvgp8b1ma1" path="res://resources/weapons/bow_basic.tres" id="5_rwmet"]
-
-[sub_resource type="Resource" id="Resource_esfxm"]
-script = ExtResource("2_15tbu")
-Speed = 100.0
-MaxHp = 50.0
-MaxMp = 50.0
-MaxEnergy = 50.0
-MaxArmor = 50.0
-MaxShield = 50.0
-Strength = 50.0
-Agility = 50.0
-Intelligence = 50.0
-metadata/_custom_type_script = "uid://jaf1bf5g0o0w"
+[ext_resource type="Resource" uid="uid://byt608wfgr62s" path="res://resources/weapons/bow_burst.tres" id="4_rwmet"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sdmle"]
 radius = 17.720045
@@ -25,7 +11,6 @@ radius = 17.720045
 [node name="player" type="CharacterBody2D" unique_id=406608555]
 texture_filter = 3
 script = ExtResource("1_esfxm")
-BaseStats = SubResource("Resource_esfxm")
 
 [node name="ca" type="CollisionShape2D" parent="." unique_id=235631038]
 shape = SubResource("CircleShape2D_sdmle")
@@ -38,4 +23,4 @@ texture = ExtResource("1_pkbir")
 zoom = Vector2(2, 2)
 
 [node name="Weapon" parent="." unique_id=1497744069 instance=ExtResource("4_55td2")]
-Resource = ExtResource("5_rwmet")
+Resource = ExtResource("4_rwmet")

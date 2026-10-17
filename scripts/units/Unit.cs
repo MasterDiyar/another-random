@@ -24,7 +24,7 @@ public partial class Unit : CharacterBody2D
 
     public virtual void TakeDamage(float damage)
     {
-        
+        DamageNumPool.Instance.SetDamage(GlobalPosition, damage);
         EmitSignalOnDamaged(damage);
     }
 }

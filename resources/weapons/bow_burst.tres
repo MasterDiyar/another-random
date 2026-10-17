@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="BurstWeaponResource" format=3 uid="uid://byt608wfgr62s"]
+
+[ext_resource type="Resource" uid="uid://dr3ycr5w4np7k" path="res://resources/bullets/arrow_basic.tres" id="1_ekoge"]
+[ext_resource type="Script" uid="uid://cyygfh3ak4hl6" path="res://scripts/resource/BurstWeaponResource.cs" id="1_tpj03"]
+[ext_resource type="Texture2D" uid="uid://f84nqvxf6wsy" path="res://assets/sprites/bolt.png" id="2_v7g1p"]
+
+[resource]
+script = ExtResource("1_tpj03")
+BurstCount = 9
+BurstDuration = 0.5
+BurstSpread = 0.15
+BetweenAngle = 0.07
+Resource = ExtResource("1_ekoge")
+WeaponTexture = ExtResource("2_v7g1p")
+Damage = 20.0
+AttackSpeed = 1.0
+metadata/_custom_type_script = "uid://cyygfh3ak4hl6"

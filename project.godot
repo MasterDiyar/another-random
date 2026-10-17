@@ -15,6 +15,10 @@ run/main_scene="uid://c45wtd85hlrvm"
 config/features=PackedStringArray("4.7", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+DamageNumPool="*uid://2lyo6h6y6qtq"
+
 [display]
 
 window/size/viewport_width=1920
