@@ -6,6 +6,7 @@ namespace trash.scripts.units;
 public partial class Unit : CharacterBody2D
 {
     [Export] public UnitStats BaseStats { get; set; }
+    public float MoveMultiplier=1, AdrenalineMultiplier=1; 
 
     public UnitStatsInstance Stats { get; private set; }
 

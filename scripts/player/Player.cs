@@ -6,7 +6,7 @@ namespace trash.scripts.units;
 
 public partial class Player : Unit
 {
-
+    [Export] private Camera2D camera;
     public override void _PhysicsProcess(double delta)
     {
         Vector2 direction = Input.GetVector("a","d","w","s");
@@ -24,5 +24,13 @@ public partial class Player : Unit
         }
 
         MoveAndSlide();
+    }
+
+    public void CameraShake(float strength)
+    {
+        Tween tween = CreateTween();
+        
+        tween.TweenProperty(camera, "offset", new Vector2(9,0), 0.2);
+                
     }
 }
