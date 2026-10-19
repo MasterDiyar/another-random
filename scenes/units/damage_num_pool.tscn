@@ -3,4 +3,7 @@
 [ext_resource type="Script" uid="uid://bllr654avfekk" path="res://scripts/pools/DamageNumPool.cs" id="1_6fhay"]
 
 [node name="DamageNumPool" type="Node2D" unique_id=1676136755]
+texture_filter = 3
 script = ExtResource("1_6fhay")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=748155961]

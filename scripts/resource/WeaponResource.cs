@@ -6,7 +6,7 @@ using trash.scripts.weapons;
 [GlobalClass]
 public partial class WeaponResource : Resource
 {
-    [Export] public WeaponType Type;
+    [Export] public WeaponType Type = WeaponType.Sword;
     
     [Export] public BulletResource Resource;
     [Export] public Texture2D WeaponTexture;

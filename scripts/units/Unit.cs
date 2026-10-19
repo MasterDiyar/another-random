@@ -1,4 +1,5 @@
 ﻿using Godot;
+using trash.scripts.item;
 using trash.scripts.resource;
 
 namespace trash.scripts.units;
@@ -6,6 +7,7 @@ namespace trash.scripts.units;
 public partial class Unit : CharacterBody2D
 {
     [Export] public UnitStats BaseStats { get; set; }
+    [Export] public Inventory Inventory { get; set; }
     public float MoveMultiplier=1, AdrenalineMultiplier=1; 
 
     public UnitStatsInstance Stats { get; private set; }
@@ -18,6 +20,11 @@ public partial class Unit : CharacterBody2D
         {
             Stats = new UnitStatsInstance(BaseStats);
         }
+
+        if (Inventory == null)
+        {
+            Inventory = new Inventory();
+        }
     }
     
     [Signal] public delegate void OnShootEventHandler(float angle, Vector2 position, Unit unit);
@@ -27,5 +34,10 @@ public partial class Unit : CharacterBody2D
     {
         DamageNumPool.Instance.SetDamage(GlobalPosition, damage);
         EmitSignalOnDamaged(damage);
+    }
+
+    public void DropItemOnDeath()
+    {
+        
     }
 }

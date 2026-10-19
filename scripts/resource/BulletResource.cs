@@ -13,9 +13,9 @@ public partial class BulletResource : Resource
     [Export] public float Pierce;
     [Export] public float Acceleration;
 
-    public virtual void OnSpawn()
+    public virtual void OnSpawn(Bullet bullet)
     {
-        Resource?.OnSpawn();
+        Resource?.OnSpawn(bullet);
     }
     
     public virtual void OnDieSpawn()

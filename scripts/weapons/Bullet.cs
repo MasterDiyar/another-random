@@ -22,7 +22,7 @@ public partial class Bullet : Area2D
         LifeTime = resource.LifeTime;
 
         Speed += Resource.Speed;
-        Resource.OnSpawn();
+        Resource.OnSpawn(this);
     }
 
     public override void _Ready()
