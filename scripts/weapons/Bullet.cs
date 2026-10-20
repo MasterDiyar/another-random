@@ -15,7 +15,7 @@ public partial class Bullet : Area2D
     
     public void SetResource(BulletResource resource, float damage)
     {
-        Resource = resource;
+        Resource = resource.Copy();
         CollisionShape.Shape = Resource.Shape;
         Sprite.Texture = Resource.Texture;
         Damage = damage;

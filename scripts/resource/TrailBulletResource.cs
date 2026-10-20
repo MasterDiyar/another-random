@@ -33,9 +33,10 @@ public partial class TrailBulletResource : BulletResource
             _trail.AddPoint(Vector2.Zero);
             _trail.DefaultColor = TrailColor;
             _trail.WidthCurve = new Curve();
-            _trail.WidthCurve.AddPoint(Vector2.One);
             _trail.WidthCurve.AddPoint(Vector2.Zero);
+            _trail.WidthCurve.AddPoint(Vector2.One);
             _trail.Width = Width;
+            bullet.AddChild(_trail);
         }else {
             _sprites = new Sprite2D[Count];
             for (int i = 0; i < Count; i++) {
@@ -60,5 +61,10 @@ public partial class TrailBulletResource : BulletResource
         }else {
             _trail.AddPoint(Vector2.FromAngle(bullet.Rotation+Single.Pi) * MaxDistance * distance);
         }
+    }
+    
+    public override TrailBulletResource Copy() 
+    {
+        return (TrailBulletResource) MemberwiseClone();
     }
 }

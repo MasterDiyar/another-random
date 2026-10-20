@@ -1,8 +1,9 @@
 ﻿using Godot;
+using trash.scripts.resource;
 using trash.scripts.weapons;
 
 [GlobalClass]
-public partial class BulletResource : Resource
+public partial class BulletResource : Resource, IResourceInit<BulletResource>
 {
     [Export] public PackedScene BulletScene;
     [Export] public BulletResource Resource;
@@ -30,5 +31,10 @@ public partial class BulletResource : Resource
     public virtual void PerFlight(float lifetime, ref Bullet bullet)
     {
         Resource?.PerFlight(lifetime, ref bullet);
+    }
+    
+    public virtual BulletResource Copy() 
+    {
+        return (BulletResource) MemberwiseClone();
     }
 }

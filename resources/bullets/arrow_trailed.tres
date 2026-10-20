@@ -8,9 +8,9 @@
 
 [resource]
 script = ExtResource("1_x4bo7")
-Type = 1
-Width = 5.0
+Width = 3.0
 TrailColor = Color(0.5137255, 0.4509804, 0.40392157, 1)
+MaxDistance = 18.0
 BulletScene = ExtResource("1_11gcf")
 Texture = ExtResource("2_7y0rn")
 Shape = SubResource("CircleShape2D_jpotq")
