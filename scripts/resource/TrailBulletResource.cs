@@ -40,9 +40,10 @@ public partial class TrailBulletResource : BulletResource
             _sprites = new Sprite2D[Count];
             for (int i = 0; i < Count; i++) {
                 _sprites[i] = new Sprite2D();
-                _sprites[i].Texture = Resource.Texture;
-                _sprites[i].Modulate = _sprites[i].Modulate * Difference * i;
                 bullet.AddChild(_sprites[i]);
+                _sprites[i].Texture = Texture;
+                _sprites[i].Modulate = _sprites[i].Modulate * Difference * (Count - i);
+                
             }
         }
         base.OnSpawn(bullet);
@@ -54,10 +55,10 @@ public partial class TrailBulletResource : BulletResource
         if (Type == TrailType.TextureShade) {
             for (int i = 0; i < Count; i++)
                 _sprites[i].Position = distance / LifeTime * MaxDistance * i * Vector2.Left;
-
+    
             base.PerFlight(lifetime, ref bullet);
         }else {
-            _trail.AddPoint(Vector2.FromAngle(bullet.Rotation+Single.Pi * MaxDistance * distance));
+            _trail.AddPoint(Vector2.FromAngle(bullet.Rotation+Single.Pi) * MaxDistance * distance);
         }
     }
 }

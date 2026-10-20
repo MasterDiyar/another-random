@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="BurstWeaponResource" format=3 uid="uid://byt608wfgr62s"]
 
-[ext_resource type="Resource" uid="uid://dr3ycr5w4np7k" path="res://resources/bullets/arrow_basic.tres" id="1_ekoge"]
+[ext_resource type="Resource" uid="uid://d3x2cajf1ydix" path="res://resources/bullets/arrow_trailed.tres" id="1_ekoge"]
 [ext_resource type="Script" uid="uid://cyygfh3ak4hl6" path="res://scripts/resource/BurstWeaponResource.cs" id="1_tpj03"]
 [ext_resource type="Texture2D" uid="uid://b5bevyemtgsyo" path="res://assets/sprites/bow.png" id="2_ekoge"]
 

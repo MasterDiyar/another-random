@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://quy1b10ehnjk"]
+
+[ext_resource type="Texture2D" uid="uid://73w0lq5sjcde" path="res://assets/vfx/firebolt.png" id="1_0scte"]
+
+[sub_resource type="Gradient" id="Gradient_ckvpb"]
+offsets = PackedFloat32Array(0, 0.69135803, 1)
+colors = PackedColorArray(1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0.41568628)
+
+[sub_resource type="Gradient" id="Gradient_grgi1"]
+colors = PackedColorArray(1, 1, 0, 1, 1, 0, 0, 1)
+
+[node name="particlebullet" type="Area2D" unique_id=1332980173]
+texture_filter = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1489582597]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1171744221]
+texture = ExtResource("1_0scte")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=169990001]
+modulate = Color(1.4369954, 1.4369954, 1.4369954, 1)
+amount = 12
+emission_shape = 1
+emission_sphere_radius = 3.53
+direction = Vector2(-1, 0)
+spread = 30.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+angle_min = -45.0
+angle_max = 45.0
+scale_amount_min = 0.5
+scale_amount_max = 0.75
+color_ramp = SubResource("Gradient_ckvpb")
+color_initial_ramp = SubResource("Gradient_grgi1")

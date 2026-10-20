@@ -2,14 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://lsh8cumvtfdk" path="res://scenes/weapons/bullet.tscn" id="1_44dpr"]
 [ext_resource type="Script" uid="uid://btr4vo6ig0ya5" path="res://scripts/resource/BulletResource.cs" id="1_jpotq"]
-[ext_resource type="Texture2D" uid="uid://f84nqvxf6wsy" path="res://assets/sprites/bolt.png" id="2_nx5fv"]
+[ext_resource type="Texture2D" uid="uid://djjovbvhimh25" path="res://assets/sprites/arrow.png" id="2_44dpr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jpotq"]
 
 [resource]
 script = ExtResource("1_jpotq")
 BulletScene = ExtResource("1_44dpr")
-Texture = ExtResource("2_nx5fv")
+Texture = ExtResource("2_44dpr")
 Shape = SubResource("CircleShape2D_jpotq")
 Speed = 240.0
 LifeTime = 2.0

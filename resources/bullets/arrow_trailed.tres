@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="TrailBulletResource" format=3 uid="uid://d3x2cajf1ydix"]
+
+[ext_resource type="PackedScene" uid="uid://lsh8cumvtfdk" path="res://scenes/weapons/bullet.tscn" id="1_11gcf"]
+[ext_resource type="Script" uid="uid://nmo0ngv8g3rj" path="res://scripts/resource/TrailBulletResource.cs" id="1_x4bo7"]
+[ext_resource type="Texture2D" uid="uid://djjovbvhimh25" path="res://assets/sprites/arrow.png" id="2_7y0rn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jpotq"]
+
+[resource]
+script = ExtResource("1_x4bo7")
+Type = 1
+Width = 5.0
+TrailColor = Color(0.5137255, 0.4509804, 0.40392157, 1)
+BulletScene = ExtResource("1_11gcf")
+Texture = ExtResource("2_7y0rn")
+Shape = SubResource("CircleShape2D_jpotq")
+Speed = 240.0
+LifeTime = 2.0
+Acceleration = -60.0
+metadata/_custom_type_script = "uid://nmo0ngv8g3rj"
