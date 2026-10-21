@@ -4,11 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://dxhkx4uct6ao2" path="res://assets/sprites/playerHRIP.png" id="1_pkbir"]
 [ext_resource type="Script" uid="uid://jaf1bf5g0o0w" path="res://scripts/resource/UnitStats.cs" id="2_15tbu"]
 [ext_resource type="PackedScene" uid="uid://c0lkkpdqfk4bi" path="res://scenes/weapons/weapon.tscn" id="4_55td2"]
-[ext_resource type="Resource" uid="uid://byt608wfgr62s" path="res://resources/weapons/bow_burst.tres" id="4_rwmet"]
 [ext_resource type="PackedScene" uid="uid://c21stphxhw7xj" path="res://scenes/ui/control.tscn" id="6_xovxq"]
 [ext_resource type="PackedScene" uid="uid://c5tuwcvabpeop" path="res://scenes/ui/inventory.tscn" id="7_174p4"]
 
-[sub_resource type="Resource" id="Resource_nqevj"]
+[sub_resource type="Resource" id="Resource_xovxq"]
 script = ExtResource("2_15tbu")
 Speed = 100.0
 MaxHp = 50.0
@@ -29,7 +28,7 @@ texture_filter = 3
 script = ExtResource("1_esfxm")
 camera = NodePath("Camera2D")
 weapon = NodePath("Weapon")
-BaseStats = SubResource("Resource_nqevj")
+BaseStats = SubResource("Resource_xovxq")
 Inventory = NodePath("Inventory")
 
 [node name="ca" type="CollisionShape2D" parent="." unique_id=235631038]
@@ -43,7 +42,6 @@ texture = ExtResource("1_pkbir")
 zoom = Vector2(2, 2)
 
 [node name="Weapon" parent="." unique_id=1497744069 instance=ExtResource("4_55td2")]
-Resource = ExtResource("4_rwmet")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1919157773]
 

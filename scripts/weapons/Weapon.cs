@@ -42,6 +42,6 @@ public partial class Weapon : Node2D
 		if (!CanShoot)  return;
 		CanShoot = false;
 		between = Resource.AttackSpeed;
-		Resource.SpawnBullet(GetTree().Root.GetChild(0), position, angle, shooter);
+		Resource.SpawnBullet(GetTree().Root.GetChild(1), position, angle, shooter);
 	}
 }

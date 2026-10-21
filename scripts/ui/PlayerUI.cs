@@ -17,7 +17,7 @@ public partial class PlayerUI : Control
 		if (Player != null)
 		{
 			_inventory = Player.Inventory;
-			
+			_inventory.OnWeaponAdded += SetSlots;
 		}
 	}
 

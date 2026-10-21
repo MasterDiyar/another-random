@@ -2,6 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://dqf3r31ii88vk" path="res://scenes/units/botiha.tscn" id="2_n84xs"]
 [ext_resource type="PackedScene" uid="uid://b1cjxlpj6tleh" path="res://scenes/units/player.tscn" id="2_p8wtx"]
+[ext_resource type="PackedScene" uid="uid://b33rp2vy3cju5" path="res://scenes/weapons/dropped_weapon.tscn" id="3_altso"]
+[ext_resource type="Resource" uid="uid://1hkvgp8b1ma1" path="res://resources/weapons/bow_basic.tres" id="4_tyh27"]
+[ext_resource type="Resource" uid="uid://byt608wfgr62s" path="res://resources/weapons/bow_burst.tres" id="5_c35mg"]
 
 [node name="map" type="Node2D" unique_id=546030945]
 texture_filter = 3
@@ -11,3 +14,11 @@ BaseStats = null
 
 [node name="botiha" parent="." unique_id=516068922 instance=ExtResource("2_n84xs")]
 position = Vector2(-31.608887, 165.41747)
+
+[node name="DroppedWeapon" parent="." unique_id=1552128862 instance=ExtResource("3_altso")]
+position = Vector2(30.72157, 92.72186)
+Resource = ExtResource("4_tyh27")
+
+[node name="DroppedWeapon2" parent="." unique_id=121770096 instance=ExtResource("3_altso")]
+position = Vector2(154.2442, 66.63074)
+Resource = ExtResource("5_c35mg")

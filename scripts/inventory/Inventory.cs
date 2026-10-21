@@ -10,7 +10,7 @@ public partial class Inventory : Node2D
 {
     [Signal] public delegate void OnWeaponAddedEventHandler(WeaponResource[] weapons);
     
-    public WeaponResource[] Weapons = new WeaponResource[3];
+    [Export] public WeaponResource[] Weapons = new WeaponResource[3];
     public List<InventoryItem> Stockpile = [];
 
     public int WeaponIndex = 0;

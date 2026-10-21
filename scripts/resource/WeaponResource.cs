@@ -29,15 +29,46 @@ public partial class WeaponResource : Resource
     {
         float mult = type switch
         {
-            WeaponType.Sword =>  unit.BaseStats.Strength * 0.15f  + unit.BaseStats.MaxHp * 0.17f+ unit.BaseStats.Agility * 0.05f,
-            WeaponType.Axe =>    unit.BaseStats.Strength * 0.3f   + unit.BaseStats.MaxHp * 0.1f,
-            WeaponType.Pike =>   unit.BaseStats.Strength * 0.22f  + unit.BaseStats.MaxShield * 0.4f,
-            WeaponType.Bow =>    unit.BaseStats.Strength * 0.076f + unit.BaseStats.Agility * .18f + unit.BaseStats.MaxEnergy * 0.1f,
-            WeaponType.Thrown => unit.BaseStats.Strength * 0.26f  + unit.BaseStats.Agility * .18f,
-            WeaponType.Muscet => unit.BaseStats.Agility  * 0.3f   + unit.BaseStats.MaxEnergy * .045f,
-            WeaponType.Wand =>   unit.BaseStats.Intelligence * .22f + unit.BaseStats.MaxMp * .17f,
-            WeaponType.Oculus => unit.BaseStats.Intelligence * .12f + unit.BaseStats.MaxMp * .34f + unit.BaseStats.MaxEnergy * .084f,
-            WeaponType.Aura =>   unit.BaseStats.Intelligence * .38f + unit.BaseStats.MaxMp * .10f + unit.BaseStats.MaxEnergy * .176f + unit.BaseStats.MaxArmor * .1f
+            WeaponType.Sword => unit.Stats.Strength 
+                * 0.15f + unit.Stats.MaxHp 
+                * 0.17f + unit.Stats.Agility 
+                * 0.05f,
+    
+            WeaponType.Axe => unit.Stats.Strength 
+                * 0.3f + unit.Stats.MaxHp 
+                * 0.1f,
+    
+            WeaponType.Pike => unit.Stats.Strength 
+                * 0.22f + unit.Stats.MaxShield 
+                * 0.4f,
+    
+            WeaponType.Bow => unit.Stats.Strength 
+                * 0.076f + unit.Stats.Agility 
+                * 0.18f + unit.Stats.MaxEnergy 
+                * 0.1f,
+    
+            WeaponType.Thrown => unit.Stats.Strength 
+                * 0.26f + unit.Stats.Agility 
+                * 0.18f,
+    
+            WeaponType.Muscet => unit.Stats.Agility  
+                * 0.3f + unit.Stats.MaxEnergy 
+                * 0.045f,
+    
+            WeaponType.Wand => unit.Stats.Intelligence 
+                * 0.22f + unit.Stats.MaxMp 
+                * 0.17f,
+    
+            WeaponType.Oculus => unit.Stats.Intelligence 
+                * 0.12f + unit.Stats.MaxMp 
+                * 0.34f + unit.Stats.MaxEnergy 
+                * 0.084f,
+    
+            WeaponType.Aura => unit.Stats.Intelligence 
+                * 0.38f + unit.Stats.MaxMp 
+                * 0.10f + unit.Stats.MaxEnergy 
+                * 0.176f + unit.Stats.MaxArmor 
+                * 0.1f
         };
         
         return mult;

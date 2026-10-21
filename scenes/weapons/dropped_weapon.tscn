@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://b33rp2vy3cju5"]
+
+[ext_resource type="Script" uid="uid://10d1a12l65si" path="res://scripts/item/FallenWeapon.cs" id="1_8m6uf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fshpy"]
+
+[node name="DroppedWeapon" type="Area2D" unique_id=1552128862 node_paths=PackedStringArray("Sprite2D")]
+script = ExtResource("1_8m6uf")
+Sprite2D = NodePath("Sprite2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1068455558]
+shape = SubResource("CircleShape2D_fshpy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=644933239]
