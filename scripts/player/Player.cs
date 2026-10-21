@@ -7,6 +7,7 @@ namespace trash.scripts.units;
 public partial class Player : Unit
 {
     [Export] private Camera2D camera;
+    [Export] private Weapon weapon;
     public override void _PhysicsProcess(double delta)
     {
         Vector2 direction = Input.GetVector("a","d","w","s");
@@ -32,5 +33,10 @@ public partial class Player : Unit
         
         tween.TweenProperty(camera, "offset", new Vector2(9,0), 0.2);
                 
+    }
+
+    public void SetWeapon(WeaponResource resource)
+    {
+        weapon.SetWeapon(resource);
     }
 }

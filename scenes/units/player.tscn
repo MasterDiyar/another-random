@@ -5,6 +5,8 @@
 [ext_resource type="Script" uid="uid://jaf1bf5g0o0w" path="res://scripts/resource/UnitStats.cs" id="2_15tbu"]
 [ext_resource type="PackedScene" uid="uid://c0lkkpdqfk4bi" path="res://scenes/weapons/weapon.tscn" id="4_55td2"]
 [ext_resource type="Resource" uid="uid://byt608wfgr62s" path="res://resources/weapons/bow_burst.tres" id="4_rwmet"]
+[ext_resource type="PackedScene" uid="uid://c21stphxhw7xj" path="res://scenes/ui/control.tscn" id="6_xovxq"]
+[ext_resource type="PackedScene" uid="uid://c5tuwcvabpeop" path="res://scenes/ui/inventory.tscn" id="7_174p4"]
 
 [sub_resource type="Resource" id="Resource_nqevj"]
 script = ExtResource("2_15tbu")
@@ -22,10 +24,13 @@ metadata/_custom_type_script = "uid://jaf1bf5g0o0w"
 [sub_resource type="CircleShape2D" id="CircleShape2D_sdmle"]
 radius = 17.720045
 
-[node name="player" type="CharacterBody2D" unique_id=406608555]
+[node name="player" type="CharacterBody2D" unique_id=406608555 node_paths=PackedStringArray("camera", "weapon", "Inventory")]
 texture_filter = 3
 script = ExtResource("1_esfxm")
+camera = NodePath("Camera2D")
+weapon = NodePath("Weapon")
 BaseStats = SubResource("Resource_nqevj")
+Inventory = NodePath("Inventory")
 
 [node name="ca" type="CollisionShape2D" parent="." unique_id=235631038]
 shape = SubResource("CircleShape2D_sdmle")
@@ -39,3 +44,10 @@ zoom = Vector2(2, 2)
 
 [node name="Weapon" parent="." unique_id=1497744069 instance=ExtResource("4_55td2")]
 Resource = ExtResource("4_rwmet")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1919157773]
+
+[node name="PlayerUi" parent="CanvasLayer" unique_id=1215641817 node_paths=PackedStringArray("Player") instance=ExtResource("6_xovxq")]
+Player = NodePath("../..")
+
+[node name="Inventory" parent="." unique_id=66268065 instance=ExtResource("7_174p4")]
