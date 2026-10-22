@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="BulletResource" format=3 uid="uid://cg3hgh0bcn7fi"]
+
+[ext_resource type="Script" uid="uid://btr4vo6ig0ya5" path="res://scripts/resource/BulletResource.cs" id="1_i3q5j"]
+[ext_resource type="PackedScene" uid="uid://lsh8cumvtfdk" path="res://scenes/weapons/bullet.tscn" id="1_xuver"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qe1ot"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bdi27"]
+load_path = "res://.godot/imported/poop.png-e28a2d978285568038b0e82082baa370.ctex"
+
+[resource]
+script = ExtResource("1_i3q5j")
+BulletScene = ExtResource("1_xuver")
+Texture = SubResource("CompressedTexture2D_bdi27")
+Shape = SubResource("CircleShape2D_qe1ot")
+Speed = 100.0
+LifeTime = 2.0
+Acceleration = 10.0
+metadata/_custom_type_script = "uid://btr4vo6ig0ya5"

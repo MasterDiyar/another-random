@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="WeaponResource" format=3 uid="uid://hm8lhn2pjprx"]
+
+[ext_resource type="Resource" uid="uid://cg3hgh0bcn7fi" path="res://resources/bullets/poop_basic.tres" id="1_2myee"]
+[ext_resource type="Script" uid="uid://cki6336tefaid" path="res://scripts/resource/WeaponResource.cs" id="1_br33c"]
+[ext_resource type="Texture2D" uid="uid://bdbvqtwq8g7r8" path="res://assets/sprites/wantuz.png" id="2_rnm1u"]
+
+[resource]
+script = ExtResource("1_br33c")
+Type = 5
+Resource = ExtResource("1_2myee")
+WeaponTexture = ExtResource("2_rnm1u")
+Damage = 20.0
+AttackSpeed = 1.0
+metadata/_custom_type_script = "uid://cki6336tefaid"
