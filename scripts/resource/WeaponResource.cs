@@ -1,10 +1,11 @@
 ﻿
 using Godot;
+using trash.scripts.resource;
 using trash.scripts.units;
 using trash.scripts.weapons;
 
 [GlobalClass]
-public partial class WeaponResource : Resource
+public partial class WeaponResource : Resource, IResourceInit<WeaponResource>
 {
     [Export] public WeaponType Type = WeaponType.Sword;
     
@@ -72,5 +73,10 @@ public partial class WeaponResource : Resource
         };
         
         return mult;
+    }
+
+    public virtual WeaponResource Copy()
+    {
+        return (WeaponResource) MemberwiseClone();
     }
 }
